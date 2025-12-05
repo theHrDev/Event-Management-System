@@ -38,9 +38,12 @@ def get_participants(event):
     return events[event]
 
 def find_events_with_lowest_participants():
-    for names in events:
-        return names
-
+    min = 4
+    for event in events:
+        for names in event:
+            if len(names) < min:
+                min =len(names)
+            return f"{min} participant(s) with {event} of {names}"
 
 def event_management(menu):
     if menu == "1":
@@ -54,6 +57,8 @@ def event_management(menu):
     elif menu == "3":
         event = input("Enter the event name: ")
         print(get_participants(event))
+    elif menu == "4":
+        print(find_events_with_lowest_participants())
     else:
         exit()
 
