@@ -1,6 +1,6 @@
 # Event Registration Manager
 events = {
-    "Tech Summit":["Taye", "Kenny"],
+    "Tech Summit": ["Taye", "Kenny"],
     "Sports Festival": ["Lilly","Killy"],
     "Music Fiesta": ["Poppoal","koll","kktl"]
 }
@@ -40,10 +40,12 @@ def get_participants(event):
 def find_events_with_lowest_participants():
     min = 4
     for event in events:
-        for names in event:
-            if len(names) < min:
-                min =len(names)
-            return f"{min} participant(s) with {event} of {names}"
+        print(event)
+        # for names in event:
+        #     print(names)
+            # if len(names) < min:
+            #     min =len(names)
+            # return f"{min} participant(s) with {event} of {names}"
 
 def event_management(menu):
     if menu == "1":
