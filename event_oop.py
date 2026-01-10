@@ -1,5 +1,7 @@
 class User:
-    pass
+    def __init__(self,name):
+        self.name = name
 
 class Event:
-    pass
+    def __init__(self,event):
+        self.event = event
