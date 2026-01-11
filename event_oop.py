@@ -26,8 +26,12 @@ class Events:
         self.events[event_id] = new_event
         return f"event created successfully"  
           
-    def edit_event(self):
-        pass
+    def edit_event(self,event_id,event_name):
+        if event_id not in self.events:
+            return "invalid id"
+        self.events[event_id].event = event_name
+        return "event edited successfully"
+    
     def view_event(self):
         pass
     def delete_event(self):
