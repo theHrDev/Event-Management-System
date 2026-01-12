@@ -39,13 +39,12 @@ def get_participants(event):
 
 def find_events_with_lowest_participants():
     min = 4
-    for event in events:
-        print(event)
-        # for names in event:
-        #     print(names)
-            # if len(names) < min:
-            #     min =len(names)
-            # return f"{min} participant(s) with {event} of {names}"
+    for user in events.values():
+        if len(user) < min:
+            min = len(user)
+            
+        return min
+
 
 def event_management(menu):
     if menu == "1":
