@@ -57,5 +57,16 @@ class Events:
     class Enroller:
         def __init__(self,events,user):
             self.events =  events
+            self.user = user
+            
+        def register_user(self,event_id):
+            pass
+        
+        def unregister_user(self,event_id):
+            pass
+        
+        def get_participant(self,event_id):
+            pass
+        
     
     
