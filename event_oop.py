@@ -17,7 +17,7 @@ class Events:
     def __init__(self):
         self.events = {}
         
-    def generate_id():
+    def generate_id(self):
         random_id = random.randint(10*5,10*6-1)   
         event_id = f"event{random_id}"
         return event_id; 
@@ -44,7 +44,7 @@ class Events:
         if not self.events:
             return "no event found"
         results = []
-        for e in self.events:
+        for e in self.events.values():
             results.append(f"id:{e.id} event : {e.event}  users: {e.users}")
             return "\n".join(results)
     
