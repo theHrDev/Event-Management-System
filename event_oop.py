@@ -54,18 +54,22 @@ class Events:
         del self.events[event_id]
         return "Event deleted successfully"
     
-    class Enroller:
-        def __init__(self,events,user):
+class Enroller:
+    def __init__(self,events,user):
             self.events =  events
             self.user = user
             
-        def register_user(self,event_id):
+    def register_user(self,event_id,user):
+            if not event_id in self.events.events:
+                return "invalid id"
+            
+            self.events.events[event_id].users.append(user)
+            
+        
+    def unregister_user(self,event_id):
             pass
         
-        def unregister_user(self,event_id):
-            pass
-        
-        def get_participant(self,event_id):
+    def get_participant(self,event_id):
             pass
         
     
