@@ -18,9 +18,11 @@ class Events:
         self.events = {}
         
     def generate_id(self):
-        random_id = random.randint(10*5,10*6-1)   
+        random_id = random.randint(10*5,10*6-1)  
+
         event_id = f"event{random_id}"
-        return event_id; 
+        if event_id not in self.events:
+            return event_id; 
     
     def create_event(self,event_name):
         event_id = self.generate_id()
