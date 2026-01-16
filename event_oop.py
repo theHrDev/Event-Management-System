@@ -64,6 +64,7 @@ class Enroller:
                 return "invalid id"
             
             self.events.events[event_id].users.append(user)
+            return "User enroll successfully"
             
         
     def unregister_user(self,event_id):
@@ -72,5 +73,13 @@ class Enroller:
     def get_participant(self,event_id):
             pass
         
+    
+def event_menu(menu):
+    print('Welcome, Pick one out of the menu below')
+    print('-------- 1. Add Event ---------------')
+    print('-------- 2. Remove Event ---------------')
+    print('-------- 3. Edit Event ---------------')
+    print('-------- 3. Delete Event ---------------')
+
     
     
