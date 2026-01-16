@@ -38,7 +38,7 @@ class Events:
         if not event_id in self.events:
             return "invalid event id"
         match_event = self.events[event_id]
-        return f"id: {match_event.id} \n event: {match_event.event} user: {match_event.user} ",
+        return f"id: {match_event.id} \n event: {match_event.event} users: {match_event.users} "
     
     def view_all_events(self):
         if not self.events:
@@ -46,7 +46,7 @@ class Events:
         results = []
         for e in self.events.values():
             results.append(f"id:{e.id} event : {e.event}  users: {e.users}")
-            return "\n".join(results)
+        return "\n".join(results)
     
     def delete_event(self,event_id):
         if not event_id in self.events:
@@ -59,11 +59,11 @@ class Enroller:
             self.events =  events
             self.user = user
             
-    def register_user(self,event_id,user):
+    def register_user(self,event_id):
             if not event_id in self.events.events:
                 return "invalid id"
             
-            self.events.events[event_id].users.append(user)
+            self.events.events[event_id].users.append(self.user)
             return "User enroll successfully"
             
         
@@ -79,7 +79,7 @@ def event_menu(menu):
     print('-------- 1. Add Event ---------------')
     print('-------- 2. Remove Event ---------------')
     print('-------- 3. Edit Event ---------------')
-    print('-------- 3. Delete Event ---------------')
+    print('-------- 4. Delete Event ---------------')
 
     
     
