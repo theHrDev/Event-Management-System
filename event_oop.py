@@ -88,5 +88,12 @@ def event_menu(menu):
         print('-------- 3. Edit Event ---------------')
         print('-------- 4. Delete Event ---------------')
 
-    
+
+        menu = input("Enter an option to get started: ")
+        if menu == "1":
+            pass
+        if menu == "2":
+            pass
+        if menu == "3":
+            pass
     
