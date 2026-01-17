@@ -70,7 +70,11 @@ class Enroller:
             
         
     def unregister_user(self,event_id):
-            pass
+        if not event_id in self.events.events:
+            return "invalid id"
+            
+        self.events.events[event_id].users.remove(self.user)
+        return "User enroll successfully"
         
     def get_participant(self,event_id):
             pass
@@ -78,10 +82,11 @@ class Enroller:
     
 def event_menu(menu):
     print('Welcome, Pick one out of the menu below')
-    print('-------- 1. Add Event ---------------')
-    print('-------- 2. Remove Event ---------------')
-    print('-------- 3. Edit Event ---------------')
-    print('-------- 4. Delete Event ---------------')
+    while True:
+        print('-------- 1. Add Event ---------------')
+        print('-------- 2. Remove Event ---------------')
+        print('-------- 3. Edit Event ---------------')
+        print('-------- 4. Delete Event ---------------')
 
     
     
